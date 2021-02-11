@@ -325,7 +325,7 @@ class TokenObject {
     if (this.isUsingRefreshToken && !!this.refreshTokenName &&
       !!refreshToken) {
       Cookies.set(this.refreshTokenName, refreshToken, {
-        expires: expiresAt,
+        expires: refreshTokenExpiresAt,
         domain: this.cookieDomain,
         secure: this.cookieSecure,
       });
@@ -335,7 +335,7 @@ class TokenObject {
       !!refreshTokenExpiresAt) {
       Cookies.set(this.refreshTokenTimeName,
           refreshTokenExpiresAt.toISOString(), {
-            expires: expiresAt,
+            expires: refreshTokenExpiresAt,
             domain: this.cookieDomain,
             secure: this.cookieSecure,
           });
